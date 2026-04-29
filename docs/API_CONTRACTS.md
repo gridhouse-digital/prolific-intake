@@ -6,7 +6,7 @@ Request
 
 ```json
 {
-  "code": "ISOKE-5313-K7M4Q9"
+  "code": "PHC-2285-K7M4Q9"
 }
 ```
 
@@ -75,8 +75,8 @@ Request
 
 ```json
 {
-  "phone": "(844) 476-5313",
-  "last4": "5313",
+  "phone": "(215) 245-2285",
+  "last4": "2285",
   "clientRef": "Jane Doe / Referral 42",
   "expiresInDays": 14,
   "maxUses": 5
@@ -88,9 +88,9 @@ Success response
 ```json
 {
   "ok": true,
-  "code": "ISOKE-5313-K7M4Q9",
+  "code": "PHC-2285-K7M4Q9",
   "expiresAt": "2026-04-01T20:40:00.000Z",
-  "messageTemplate": "Hi — here is your Isoke Admissions/Intake link..."
+  "messageTemplate": "Hello Jane Doe, here is your Prolific Homecare LLC Admissions / Intake link..."
 }
 ```
 

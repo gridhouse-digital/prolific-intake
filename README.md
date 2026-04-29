@@ -1,6 +1,6 @@
-# Isoke Intake
+# Prolific Homecare Intake
 
-Private admissions / intake portal for `intake.isokedevelops.com`.
+Private admissions / intake portal for `intake.prolifichcs.com`.
 
 This app is a standalone Vite + React + TypeScript project with Vercel-style API routes. It is intentionally separate from the public marketing site and is meant to be shared directly with clients and staff.
 
@@ -129,7 +129,7 @@ Notes:
 Run:
 
 ```sql
--- Website/Isoke-Intake/docs/supabase.sql
+-- Prolific-Intake/docs/supabase.sql
 ```
 
 This creates:
@@ -148,13 +148,13 @@ Important:
 Format:
 
 ```txt
-ISOKE-<LAST4>-<SUFFIX>
+PHC-<LAST4>-<SUFFIX>
 ```
 
 Example:
 
 ```txt
-ISOKE-5313-K7M4Q9
+PHC-2285-K7M4Q9
 ```
 
 Rules:
@@ -193,7 +193,7 @@ Deploy this folder as its own Vercel project.
 
 Recommended settings:
 
-- Root directory: `Website/Isoke-Intake`
+- Root directory: `Prolific-Intake`
 - Framework preset: `Vite`
 - Build command: `npm run build`
 - Output directory: `dist`
@@ -201,7 +201,7 @@ Recommended settings:
 Domain target:
 
 ```txt
-intake.isokedevelops.com
+intake.prolifichcs.com
 ```
 
 ## Operational Notes

@@ -1,4 +1,4 @@
-import { Mail, Phone, ShieldAlert } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import { SUPPORT_LINES } from '../lib/content'
 
 export function SupportCard() {
@@ -8,21 +8,21 @@ export function SupportCard() {
       <h2>Quick support if the code or form gets stuck.</h2>
 
       <div className="support-stack">
-        <a className="support-row" href="tel:+18444765313">
+        <a className="support-row" href="tel:+12152452285">
           <Phone size={18} />
           <span>
             <strong>{SUPPORT_LINES.mainLineDisplay}</strong>
-            <small>Office and after-hours: {SUPPORT_LINES.mainLineNumber}</small>
+            <small>Main intake line</small>
           </span>
         </a>
 
-        <div className="support-row">
-          <ShieldAlert size={18} />
+        <a className="support-row" href="tel:+12675286140">
+          <Phone size={18} />
           <span>
-            <strong>Emergency after-hours</strong>
-            <small>{SUPPORT_LINES.emergencyAfterHours}</small>
+            <strong>{SUPPORT_LINES.secondaryLineDisplay}</strong>
+            <small>Alternate phone</small>
           </span>
-        </div>
+        </a>
 
         <a className="support-row" href={`mailto:${SUPPORT_LINES.intakeEmail}`}>
           <Mail size={18} />

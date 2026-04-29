@@ -1,11 +1,12 @@
 export const SUPPORT_LINES = {
-  emergencyAfterHours: '267-983-8856',
-  intakeEmail: 'intake@isokedevelops.com',
-  mainLineDisplay: '1-(844) ISOKE-13',
-  mainLineNumber: '(844)-476-5313',
+  intakeEmail: 'intake@prolifichcs.com',
+  mainLineDisplay: '(215) 245-2285',
+  mainLineNumber: '(215) 245-2285',
+  secondaryLineDisplay: '(267) 528-6140',
+  secondaryLineNumber: '(267) 528-6140',
 }
 
-export const STAFF_SEND_SUBJECT = 'Isoke Developmental Services Admissions / Intake Access Details'
+export const STAFF_SEND_SUBJECT = 'Prolific Homecare LLC Admissions / Intake Access Details'
 
 export function buildStaffEmailTemplate(clientName?: string, code?: string) {
   const greetingName = clientName?.trim() ? ` ${clientName.trim()}` : ''
@@ -13,22 +14,21 @@ export function buildStaffEmailTemplate(clientName?: string, code?: string) {
 
   return `Hello${greetingName},
 
-You have been invited to complete the Isoke Developmental Services Admissions / Intake form.
+You have been invited to complete the Prolific Homecare LLC Admissions / Intake form.
 
 Please use the secure link below to begin:
-https://intake.isokedevelops.com
+https://intake.prolifichcs.com
 
 Your secure access code:
 ${resolvedCode}
 
 For privacy, please keep this code confidential and use it only for your admissions / intake form.
 
-If you need assistance, please contact our Admissions Team at intake@isokedevelops.com or (844)-476-5313.
-After-hours support: (844)-476-5313
-Emergency after-hours: 267-983-8856
+If you need assistance, please contact our Admissions Team at intake@prolifichcs.com or (215) 245-2285.
+Alternate phone: (267) 528-6140
 
 Kind regards,
-Isoke Developmental Services
+Prolific Homecare LLC
 Admissions Team`
 }
 

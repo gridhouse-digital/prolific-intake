@@ -1,8 +1,8 @@
 {
-  "name": "isoke-intake",
+  "name": "prolific-intake",
   "version": "0.1.0",
   "private": true,
-  "description": "Private intake portal for Isoke Developmental Services",
+  "description": "Private intake portal for Prolific Homecare LLC",
   "type": "module",
   "scripts": {
     "dev": "node node_modules/vite/bin/vite.js",
@@ -15,7 +15,8 @@
     "test": "node node_modules/vitest/vitest.mjs run"
   },
   "keywords": [
-    "isoke",
+    "prolific",
+    "homecare",
     "intake",
     "vercel",
     "jotform"

@@ -7,6 +7,7 @@ import { StaffTools } from './components/StaffTools'
 import { SupportCard } from './components/SupportCard'
 import { useDocumentMeta } from './lib/useDocumentMeta'
 import { AuditPage } from './pages/AuditPage'
+import { SubmissionsPage } from './pages/SubmissionsPage'
 
 function IntakeHome() {
   const [isUnlocked, setIsUnlocked] = useState(false)
@@ -16,16 +17,16 @@ function IntakeHome() {
   const navigate = useNavigate()
 
   useDocumentMeta({
-    title: 'Admissions / Intake | Isoke Developmental Services',
-    description: 'Private Isoke admissions and intake portal.',
-    canonical: 'https://intake.isokedevelops.com/',
+    title: 'Admissions / Intake | Prolific Homecare LLC',
+    description: 'Private Prolific Homecare admissions and intake portal.',
+    canonical: 'https://intake.prolifichcs.com/',
   })
 
   const callbackDefaultMessage = useMemo(
     () =>
       isUnlocked || hasStaffAccess
         ? 'I can access the intake page, but I still need help with next steps.'
-        : 'I need help with my Isoke intake access code.',
+        : 'I need help with my Prolific Homecare intake access code.',
     [hasStaffAccess, isUnlocked],
   )
 
@@ -35,12 +36,13 @@ function IntakeHome() {
 
   return (
     <main className="app-shell">
+      <img src="/prolific-logo-light.png" alt="Prolific Homecare LLC" className="site-logo" />
       <section className="hero-shell">
         <div className="hero-copy">
           <div className="eyebrow">Admissions / Intake</div>
-          <h1>A private intake path for clients and families.</h1>
+          <h1>Care starts with a clear next step.</h1>
           <p className="hero-lead">
-            This portal is only shared directly by Isoke Developmental Services. Enter your code to continue to the secure
+            This portal is only shared directly by Prolific Homecare LLC. Enter your code to continue to the secure
             admissions packet.
           </p>
         </div>
@@ -64,7 +66,7 @@ function IntakeHome() {
               <div>
                 <div className="eyebrow">Need help?</div>
                 <h3>Need a human follow-up after unlocking?</h3>
-                <p>Open the callback popup and the Isoke team can reach back out directly.</p>
+                <p>Open the callback popup and the Prolific Homecare team can reach back out directly.</p>
               </div>
               <button className="primary-button" type="button" onClick={() => setIsCallbackOpen(true)}>
                 Request a callback
@@ -78,7 +80,7 @@ function IntakeHome() {
               <div>
                 <div className="eyebrow">Need help?</div>
                 <h3>Need help with the intake code?</h3>
-                <p>Open the callback popup and the Isoke team can follow up directly.</p>
+                <p>Open the callback popup and the Prolific Homecare team can follow up directly.</p>
               </div>
               <button className="primary-button" type="button" onClick={() => setIsCallbackOpen(true)}>
                 Request a callback
@@ -108,6 +110,8 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<IntakeHome />} />
       <Route path="/audit" element={<AuditPage onBack={() => navigate('/')} />} />
+      <Route path="/submissions" element={<SubmissionsPage onBack={() => navigate('/audit')} />} />
+      <Route path="/submissions/:id" element={<SubmissionsPage onBack={() => navigate('/audit')} />} />
       <Route path="*" element={<IntakeHome />} />
     </Routes>
   )

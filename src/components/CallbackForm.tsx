@@ -63,7 +63,7 @@ export function CallbackForm({ defaultMessage = '', isOpen, onClose }: CallbackF
     }
 
     setStatus('success')
-    setFeedback('Your callback request was sent. Someone from Isoke should reach out soon.')
+    setFeedback('Your callback request was sent. Someone from Prolific Homecare should reach out soon.')
     setName('')
     setPhone('')
     setBestTime('')
@@ -83,7 +83,7 @@ export function CallbackForm({ defaultMessage = '', isOpen, onClose }: CallbackF
             <div>
               <div className="eyebrow">Request a callback</div>
               <h3 id="callback-modal-title">Need help getting into the intake form?</h3>
-              <p>Send your details and the Isoke team can follow up directly.</p>
+              <p>Send your details and the Prolific Homecare team can follow up directly.</p>
             </div>
             <button className="icon-button" type="button" onClick={onClose} aria-label="Close callback form">
               <X size={16} />

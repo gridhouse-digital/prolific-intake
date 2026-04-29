@@ -48,11 +48,11 @@ export function AccessGate({ onUnlock }: AccessGateProps) {
         <div>
           <div className="eyebrow">Private access</div>
           <h2>Enter your intake code to begin.</h2>
-          <p>This intake form was shared privately by Isoke Developmental Services. Enter your access code to begin.</p>
+          <p>This intake form was shared privately by Prolific Homecare LLC. Enter your access code to begin.</p>
         </div>
         <div className="badge-pill">
           <KeyRound size={15} />
-          Format: ISOKE-5313-K7M4Q9
+          Format: PHC-2285-K7M4Q9
         </div>
       </div>
 
@@ -64,7 +64,7 @@ export function AccessGate({ onUnlock }: AccessGateProps) {
             inputMode="text"
             name="accessCode"
             onChange={event => setCode(event.target.value.toUpperCase())}
-            placeholder="ISOKE-1234-ABCDEF"
+            placeholder="PHC-1234-ABCDEF"
             value={code}
             required
           />

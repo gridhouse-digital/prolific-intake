@@ -1,7 +1,7 @@
-## Isoke Intake Module — Implementation Spec
+## Prolific Homecare Intake Module — Implementation Spec
 
 ### Summary
-- **Goal**: Deploy a separate intake experience on `intake.isokedevelops.com` that is *only shared with clients* (not linked from the marketing site), gated by a **client-specific access code**, and embedding the **Jotform admissions packet**.
+- **Goal**: Deploy a separate intake experience on `intake.prolifichcs.com` that is *only shared with clients* (not linked from the marketing site), gated by a **client-specific access code**, and embedding the **Jotform admissions packet**.
 - **Staff workflow**: Staff can unlock a **password-gated staff tool** on the same page to generate access codes that include the client’s **phone last-4**.
 - **System of record for submissions**: **Jotform** (not the website DB). The DB only stores access codes and their usage metadata.
 
@@ -16,12 +16,12 @@
 ## User Experience
 
 ### Public (Client) Flow
-1. Client opens `https://intake.isokedevelops.com`
+1. Client opens `https://intake.prolifichcs.com`
 2. Client sees:
    - Page title + short instructions
    - **Access code input**
-   - Support numbers (after-hours + emergency after-hours)
-3. Client enters code in the format `ISOKE-<LAST4>-<SUFFIX>`
+   - Support phone numbers and intake email
+3. Client enters code in the format `PHC-<LAST4>-<SUFFIX>`
 4. App calls `POST /api/verify-code`
 5. If valid:
    - App stores unlock state in `sessionStorage`
@@ -53,13 +53,12 @@
 - “Admissions / Intake”
 
 ### Instructions
-- “This intake form was shared privately by Isoke Developmental Services. Enter your access code to begin.”
+- "This intake form was shared privately by Prolific Homecare LLC. Enter your access code to begin."
 
 ### Help / Contact (from admissions packet)
-- **Main line**: `1-(844) ISOKE-13` / `(844)-476-5313`
-- **After-hours**: `(844)-476-5313`
-- **Emergency after-hours**: `267-983-8856`
-- **Email**: `admin@isokedevelops.com` (administrative), `nursing@isokedevelops.com` (clinical)
+- **Main line**: `(215) 245-2285`
+- **Alternate phone**: `(267) 528-6140`
+- **Email**: `intake@prolifichcs.com`
 
 ### Indexing
 - Must include `noindex, nofollow` meta tags.
@@ -70,7 +69,7 @@
 
 ### Hosting
 - Separate Vercel project for the intake module
-- Domain: `intake.isokedevelops.com`
+- Domain: `intake.prolifichcs.com`
 - DNS: `CNAME intake -> Vercel target` (per Vercel domain instructions)
 
 ### Frontend
@@ -110,12 +109,12 @@
 ## Access Code Rules
 
 ### Format
-- `ISOKE-<LAST4>-<SUFFIX>`
+- `PHC-<LAST4>-<SUFFIX>`
   - `LAST4`: 4 digits (last 4 digits of client phone)
   - `SUFFIX`: 6 characters from a typo-resistant alphabet (avoid `O/0` and `I/1`)
 
 Example:
-- `ISOKE-5313-K7M4Q9`
+- `PHC-2285-K7M4Q9`
 
 ### Security notes
 - Do **not** store plaintext codes in DB.
@@ -181,7 +180,7 @@ Example:
     - `last4` directly, or
     - `phone` and extract digits → last4
   - Validate `last4` is exactly 4 digits
-  - Generate new code `ISOKE-${last4}-${suffix}`
+  - Generate new code `PHC-${last4}-${suffix}`
   - Store hashed code in DB with metadata
   - Return plaintext code to staff UI (only once)
 - **Responses**:
@@ -242,12 +241,12 @@ Example:
 ---
 
 ## Staff Send Template (shown after code generation)
-Hi — here is your Isoke Admissions/Intake link:
-`https://intake.isokedevelops.com`
+Hi, here is your Prolific Homecare Admissions/Intake link:
+`https://intake.prolifichcs.com`
 
 Access code:
 `{{CODE}}`
 
 If you need help, reply to this message or request a callback.
-After-hours line: `(844)-476-5313`. Emergency after-hours: `267-983-8856`.
+For help, call `(215) 245-2285` or `(267) 528-6140`.
 

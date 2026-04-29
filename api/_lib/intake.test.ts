@@ -9,16 +9,16 @@ import {
 
 describe('intake helpers', () => {
   it('normalizes access codes', () => {
-    expect(normalizeAccessCode('  isoke-5313-k7m4q9  ')).toBe('ISOKE-5313-K7M4Q9')
+    expect(normalizeAccessCode('  phc-2285-k7m4q9  ')).toBe('PHC-2285-K7M4Q9')
   })
 
   it('extracts last four digits from phone input', () => {
-    expect(extractLast4('(844) 476-5313')).toBe('5313')
+    expect(extractLast4('(215) 245-2285')).toBe('2285')
     expect(extractLast4('53')).toBe('')
   })
 
   it('builds access code using supplied suffix', () => {
-    expect(buildAccessCode('5313', 'K7M4Q9')).toBe('ISOKE-5313-K7M4Q9')
+    expect(buildAccessCode('2285', 'K7M4Q9')).toBe('PHC-2285-K7M4Q9')
   })
 
   it('uses the typo-resistant alphabet', () => {
@@ -29,6 +29,6 @@ describe('intake helpers', () => {
   })
 
   it('builds the staff message template with the generated code', () => {
-    expect(buildStaffMessage('ISOKE-5313-K7M4Q9')).toContain('ISOKE-5313-K7M4Q9')
+    expect(buildStaffMessage('PHC-2285-K7M4Q9')).toContain('PHC-2285-K7M4Q9')
   })
 })

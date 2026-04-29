@@ -11,7 +11,7 @@ import {
 import { verifyStaffToken } from '../_lib/staff-session.js'
 import { getSupabaseAdmin } from '../_lib/supabase.js'
 
-const STAFF_SEND_SUBJECT = 'Isoke Developmental Services Admissions / Intake Access Details'
+const STAFF_SEND_SUBJECT = 'Prolific Homecare LLC Admissions / Intake Access Details'
 
 function jsonResponse(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
